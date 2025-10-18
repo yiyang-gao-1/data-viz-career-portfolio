@@ -6,6 +6,7 @@ This repository hosts all materials for a 50-minute guest lecture by **Dr Yiyang
 > Don’t say “I haven’t done it” — show “I made a demo”.
 
 ## 🗂 Repository structure
+···
 data-viz-career-portfolio/
 ├── README.md
 ├── 01_slides/
@@ -14,6 +15,7 @@ data-viz-career-portfolio/
 │   └── ggplot_intro.Rmd
 └── 03_scripts/
     └── publish_to_github.R   
+···
 
 | Folder | Purpose |
 | --- | --- |
