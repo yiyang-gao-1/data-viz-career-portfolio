@@ -29,8 +29,7 @@ This repository hosts all materials for a 50-minute guest lecture by **Dr Yiyang
 
 ## 🔗 Useful links
 - Calum Webb’s Data Visualisation portfolio: https://cjrwebb.github.io/datavis/
-- SMI105 teaching materials: https://github.com/cjrwebb/smi105-teaching-materials
-- Your portfolio repo: https://github.com/yiyang-gao-1/data-viz-career-portfolio
+- Yiyang's portfolio repo: https://github.com/yiyang-gao-1/data-viz-career-portfolio
 
 ## 📄 Licence
 Content © Yiyang Gao, 2025. Feel free to fork for learning purposes.
