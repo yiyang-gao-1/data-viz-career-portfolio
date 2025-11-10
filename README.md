@@ -1,36 +1,62 @@
-# 🎨 Data Visualisation & Self-Branding (SMI105 guest lecture)
+## Overview
 
-This repository hosts all materials for a 50-minute guest lecture by **Dr Yiyang Gao** for **Dr Calum Webb’s SMI105 Data Visualisation** course.
+This repository hosts the teaching materials for a guest lecture delivered as part of **EDC101: Data Visualisation** at the University of Sheffield.  
+The session explores how **data visualisation can be used as a tool for personal branding**, combining action, application, mindset, and reproducible skills.
 
-**Core idea:**  
-> Don’t say “I haven’t done it” — show “I made a demo”.
+The lecture aims to help students:
 
-## 🗂 Repository structure
+- Recognise the role of **data storytelling** in employability and digital identity.  
+- Build an initial **personal website** and **GitHub portfolio**.  
+- Move from *“I haven’t done it”* → *“I made a demo”* by producing small, visible outputs.  
+- Apply **open-source tools** (R Markdown / Quarto, GitHub, Shiny) to publish reproducible work.
 
 
-| Folder | Purpose |
-| --- | --- |
-| `01_slides/` | Quarto slides (HTML) for the lecture |
-| `02_demos/` | Reproducible RStudio demo(s) students can fork and run |
-| `03_scripts/` | Optional helper scripts (e.g., publish to GitHub) |
+##  Setup instructions
 
-## 🚀 Quick start (students)
-1. **Fork** this repo to your GitHub.
-2. Open in **RStudio**.  
-   - Install packages if asked: `install.packages(c("ggplot2", "quarto"))`
-3. Run the demo: open `02_demos/ggplot_intro.Rmd` → **Knit**.
-4. Build slides: open `01_slides/DataViz_SelfBranding.qmd` → **Render**.
-5. Commit and push your changes to show your progress.
+1. **Clone or download** this repository:
 
-## 🧠 Learning goals
-- Use data visualisation to **tell a story** about yourself and your skills.
-- Practice the **demo mindset**: turn a job requirement into a small, concrete artefact.
-- Build a visible trail: **RStudio → GitHub → (optional) website**.
+```bash
+   git clone https://github.com/yiyang-gao-1/data-viz-career-portfolio.git
+```
 
-## 🔗 Useful links
-- Calum Webb’s Data Visualisation portfolio: https://cjrwebb.github.io/datavis/
-- Yiyang's portfolio repo: https://github.com/yiyang-gao-1/data-viz-career-portfolio
+2. **Open** the `.Rmd` file in **RStudio** (or VS Code with the Quarto extension).
 
-## 📄 Licence
-Content © Yiyang Gao, 2025. Feel free to fork for learning purposes.
+3. **Install required packages:**
 
+```r
+   install.packages(c("xaringan", "xaringanExtra", "xaringanthemer", "tidyverse", "DiagrammeR"))
+```
+
+4. **Run or knit** the slideshow:
+
+```r
+   rmarkdown::run("EDC101-Guest-Dataviz-PersonalBranding-YiyangGao.Rmd")
+```
+
+   Or use **Knit → Knit to HTML (xaringan)** in RStudio.
+
+
+## Assets
+
+All images referenced in the slides are located in the `images/` folder and are limited to official open-source tool logos:
+
+* Git
+* GitHub
+* RStudio
+* Quarto
+* Shiny
+
+---
+
+## Contact
+
+**Dr Yiyang Gao**
+
+* Research Associate in Quantitative Social Science
+* Sheffield Methods Institute, The University of Sheffield
+* [y.gao@sheffield.ac.uk](mailto:y.gao@sheffield.ac.uk)
+* [https://yiyang-gao-1.github.io](https://yiyang-gao-1.github.io)
+
+---
+
+*This repository follows the reproducible-teaching-material structure used across SMI’s R-based visualisation modules.*
