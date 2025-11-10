@@ -1,0 +1,304 @@
+---
+title: "EDC101: Using Data Visualisation to Build Personal Brands"
+subtitle: ""  
+author: 
+  - "Dr. Yiyang Gao"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: ["xaringan-themer.css", "css/custom.css"]
+    seal: false
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      sealed: false
+      ratio: 16:9
+      self_contained: true
+      countIncrementalSlides: true
+    includes:
+      after_body: header/insert-header-violet.html
+---
+
+class: middle, title
+background-size: contain
+
+<br><br>
+
+# Using Data Visualisation to Build Personal Brands
+#### EDC101 Guest Session
+
+<br><br>
+
+**Dr. Yiyang Gao**<br>
+Sheffield Methods Institute, The University of Sheffield<br>
+[y.gao@sheffield.ac.uk](mailto:y.gao@sheffield.ac.uk)
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+
+library(tidyverse)
+library(xaringan)
+library(xaringanExtra)
+library(xaringanthemer)
+
+# Defaults for code
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  fig.show = TRUE,
+  hiline = TRUE
+)
+
+# Global theme (keep close to SMI look-and-feel)
+theme_set(
+  theme(plot.background = element_rect(fill = "#F8F8F8", colour = "#F8F8F8"), 
+        panel.background = element_rect(fill = "#F8F8F8", colour = "#F8F8F8"),
+        legend.background = element_rect(fill = "#F8F8F8", colour = "#F8F8F8")
+        )
+  )
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+# Use tile overview by hitting the o key when presenting
+xaringanExtra::use_tile_view()
+```
+
+```{r xaringan-logo, echo=FALSE}
+# Add logo to top right (adjust path if needed)
+xaringanExtra::use_logo(
+  image_url = "header/smi-logo-white.png",
+  exclude_class = c("inverse", "hide_logo"), 
+  width = "180px", position = css_position(top = "1em", right = "2em")
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+# University colours
+primary_color <- "#131E29"
+secondary_color <- "#440099"
+tuos_blue <- "#9ADBE8"
+white = "#F8F8F8"
+tuos_yellow <- "#FCF281"
+tuos_purple <- "#440099"
+tuos_red <- "#E7004C"
+tuos_midnight <- "#131E29"
+
+style_uos <- style_duo_accent(
+  primary_color = "#131E29",
+  secondary_color = "#440099",
+  colors = c(tuos_purple = "#440099", 
+             grey = "#131E2960", 
+             tuos_blue ="#9ADBE8",
+             tuos_mint = "#00CE7C",
+             ac_yellow = '#FEC740'),
+  header_font_google = xaringanthemer::google_font("Source Serif Pro", "600", "600i"),
+  text_font_google   = xaringanthemer::google_font("Source Sans Pro", "300", "300i", "600", "600i"),
+  code_font_google   = xaringanthemer::google_font("Lucida Console"),
+  header_h1_font_size = "2rem",
+  header_h2_font_size = "1.5rem", 
+  header_h3_font_size = "1.25rem", 
+  text_font_size = "0.9rem",
+  code_font_size = "0.65rem", 
+  code_inline_font_size = "0.85rem",
+  inverse_text_color = "#9ADBE8", 
+  background_color = "#F8F8F8", 
+  text_color = "#131E29", 
+  link_color = "#005A8F", 
+  inverse_link_color = "#F8F8F8",
+  text_slide_number_color = "#44009970",
+  table_row_even_background_color = "transparent", 
+  table_border_color = "#44009970",
+  text_bold_font_weight = 600
+)
+
+style_uos
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+```{r xaringanExtra, echo = FALSE}
+xaringanExtra::use_progress_bar(color = "#F8F8F8", location = "top")
+```
+
+```{r xaringan-extra-styles, echo = FALSE}
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,
+  mute_unhighlighted_code = TRUE
+)
+```
+
+```{r share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r xaringanExtra-search, echo=FALSE}
+xaringanExtra::use_search(show_icon = TRUE, auto_search = FALSE)
+```
+
+---
+
+class: middle, inverse
+
+# Sign in
+
+---
+
+class: middle
+
+## Learning outcomes
+
+.panel[.panel-name[What will I learn?]
+
+By the end of this session you will be able to:
+
+* Explain how data visualisation can support **personal branding** and employability.
+* Identify **actionable steps** to build a website and GitHub portfolio.
+* Shift mindset from *“I haven’t done it”* to *“I made a demo”* via small, reproducible projects.
+* Use a short list of **free tools/resources** (Git/GitHub, R Markdown/Quarto, Shiny) to publish work online.
+* Plan one **visible demo** you can complete this week.
+]
+
+
+---
+
+class: inverse, middle
+
+# Part I — Four Dimensions
+
+---
+
+### Four Dimensions of This Talk  
+
+Action · Application · Mindset · Skills · Reflection
+
+* **Action** — Build a website and maintain a portfolio through data visualisation.  
+* **Application** — Examples that fit BA Digital Media and Society pathways.  
+* **Mindset** — From “I haven’t done it” → “I made a demo”.  
+* **Skills** — Tools and workflows for reproducible creativity.  
+* **Reflection** — How dataviz underpins your personal brand.
+
+---
+
+class: inverse, middle
+
+# Part II — Action
+
+---
+
+### Action (1): Build your personal website
+
+* Calum’s website: <https://calumwebb.co.uk>  
+* Calum’s GitHub repo: <https://github.com/cjrwebb/calumwebb>  
+* Yiyang’s website: <https://yiyang-gao-1.github.io>  
+* Yiyang’s GitHub repo: <https://github.com/yiyang-gao-1/yiyang-gao-1.github.io>  
+
+**Takeaway:** Don’t *say* you can do it; **show** you can do it — move from static slides to interactive, reproducible sites.
+
+---
+
+### Action (2): Create your portfolio on GitHub
+
+* EDC101 slides are built in **R Markdown** — version-controlled and reproducible on GitHub.  
+* A strong GitHub portfolio collects projects, notes and materials — a transparent trace of learning.  
+* Example module repo: <https://github.com/cjrwebb/smi105-teaching-materials/tree/main>.
+
+**Why portfolio?** Not just a gallery. It’s evidence of practice and growth — *output drives input*.
+
+---
+
+### Action (3): Demonstrate capability
+
+* Case study: **Sheffield post** — I didn’t know *MAIHDA* initially but had multilevel modelling experience.
+* Read JD carefully → extract themes: **longitudinal, spatial, causal** MAIHDA; methods like **MCMC**; data: **Understanding Society**.
+* Built a **demo project** to show readiness — it became key evidence in the application.
+
+**Rule of thumb:** Don’t promise — **prototype**.
+
+---
+
+class: inverse, middle
+
+# Part III — Application
+
+---
+
+### Turning learning into digital career opportunities
+
+| Pathway | Example roles | Core skill sets | Demo ideas (data + storytelling) |
+|---|---|---|---|
+| Digital Media and Communications | Digital Media Manager; Social Media Account Manager; Digital Content Producer | Data visualisation; storytelling; content design; communication | Visualise social‑media trends (e.g., TikTok/X hashtag dynamics; compare engagement across campaigns) |
+| UX / User Research | UX Designer; Usability Researcher; User Experience Analyst | Data analysis; visualisation; user‑centred testing | Map user journeys; create a mini dashboard of usability feedback |
+| Marketing and Consumer Insights | Digital Marketing Analyst; Market Research Executive; Campaign Analyst | Data‑driven storytelling; visual reporting; consumer insight | Visualise campaign performance; analyse brand sentiment; build a consumer‑behaviour dashboard |
+| Data Storytelling and Journalism | Data Journalist; Digital Storytelling Producer; Policy Communicator | Data narrative; interactive visualisation; ethical communication | Spotify listening‑trend story; misinformation network visual; map online discourse flows |
+| Public Sector and NGOs | Communication Officer; Digital Engagement Lead; Policy Analyst | Public communication; social‑issue data presentation; impact evaluation | Protest movement maps |
+
+**Tip:** You don’t need big data or complex models — **small, visible demos** (infographic, dashboard, short data story) published on GitHub + website.
+
+---
+
+class: inverse, middle
+
+# Part IV — Mindset
+
+---
+
+### From “I haven’t done it” → “I made a demo”
+
+* AI/LLMs reduce barriers — you can **prototype** quickly and learn by doing.  
+* Success = **grit + self‑learning + proactive attitude**.  
+* Expect confusion and mistakes → *draft → refine → repeat*.  
+* **Output drives input:** creating demos is the most effective way to learn.
+
+---
+
+class: inverse, middle
+
+# Part V — Skills and Handy Tools
+
+---
+
+### Skills and Tools — Self‑learning resources (all free)
+
+**1. Git + GitHub (version control & portfolio)**  
+* Track progress, collaborate, showcase work.  
+* *Happy Git with R* — <https://happygitwithr.com/>
+
+**2. RStudio + R Markdown / Quarto → HTML**  
+* Turn analysis into shareable reports and web pages.  
+* *R Markdown: The Definitive Guide* — <https://bookdown.org/yihui/rmarkdown/>  
+* **Quarto** — <https://quarto.org/>
+
+**3. R Shiny dashboards**  
+* Build interactive visualisations and apps directly from R.  
+* Shiny tutorial — <https://shiny.posit.co/r/>  
+* Shiny gallery — <https://shiny.posit.co/gallery/>  
+* Example (Calum): <https://webb.shinyapps.io/ipse/>
+
+---
+
+class: inverse, middle
+
+# Part VI — Reflection
+
+---
+
+### Small actions, big momentum
+
+* Pick **one** idea that excites you this week:  
+  * Visualise your **Spotify** data  
+  * Analyse a **TikTok** trend  
+  * Map a **digital conversation**  
+  * Recreate a chart from a favourite article  
+* Document the process on **GitHub** → post on your **website / LinkedIn**  
+* Reflect on what you learned
+
+> Don’t wait until you’re ready. **Build, share, and learn out loud.**
+

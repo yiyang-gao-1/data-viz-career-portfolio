@@ -1,7 +1,0 @@
----
-title: "About"
----
-
-- Built with **R + Quarto**
-- Publish to **GitHub Pages** or **Netlify**
-- Keep each project reproducible and documented
